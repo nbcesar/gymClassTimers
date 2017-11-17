@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+      <ion-title (click)="goHome()">Gym Class Heroes</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-toolbar >
+    <ion-row>
+      <ion-col col-12 col-md-6 align-self-center>
+        <h4 text-center>{{ clockString }}</h4>
+      </ion-col>
+      <ion-col col-12 col-md-6 class="buttonCol" >
+        <button ion-button color="secondary" (click)="startClock()">Start</button>
+        <button ion-button color="primary" (click)="stopClock()">Stop</button>
+        <button ion-button color="danger" (click)="resetClock()">Reset</button>
+        <button ion-button color="dark" [disabled]="interval || !started" (click)="endRun()">Done</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 col-md-2 *ngFor="let student of students; let i = index;">
+        <ion-card (click)="lapStudent(i)" [class.done]="student.numLaps >= numLaps">
+          <ion-card-header>{{ student.first }} {{ student.last }}</ion-card-header>
+          <ion-card-content>
+            <p>Lap: {{ student.numLaps }}</p>
+            <p>Time: {{ student.laps[student.laps.length - 1] }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,37 @@
+page-home {
+    .scroll-content {
+        display: flex;
+        justify-content: center;
+        background-color: #f8f8f8;
+    }
+    ion-grid {
+        height: 100%;
+    }
+    ion-row {
+        flex: 1;
+    }
+    .homeCol {
+        //border: 1px black solid;
+        background-repeat: no-repeat;
+        background-size: 50%;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        color: black;
+        font-size: 3em;
+        font-weight: bold;
+        
+    }
+    .roster {
+        background-color: pink;
+        background-image: url("../assets/images/roster.png");
+        //background-position: 80%;
+    }
+    .run {
+        background-color: greenyellow;
+        background-image: url("../assets/images/run.png");
+        //background-position: 80%;
+    }
+
+}

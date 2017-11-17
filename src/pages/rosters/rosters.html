@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title (click)="goHome()">Gym Class Heroes</ion-title>
+  </ion-navbar>
+
+  
+</ion-header>
+
+
+<ion-content padding>
+  
+  <ion-toolbar >
+    <ion-row>
+      <ion-col col-4 col-md-3 align-self-center>
+        <ion-input type="text" value="" placeholder="First" [(ngModel)]="first"></ion-input>
+      </ion-col>
+      <ion-col col-4 col-md-3 align-self-center>
+        <ion-input type="text" value="" placeholder="Last" [(ngModel)]="last"></ion-input>
+      </ion-col>
+      <ion-col col-4 col-md-3 align-self-center>
+        <ion-input type="number" value="" placeholder="Period" [(ngModel)]="period"></ion-input>
+      </ion-col>
+      <ion-col col-12 col-md-3 class="buttonCol">
+        <button ion-button (click)="addStudent()">Add</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+ 
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-5 col-lg-3 *ngFor="let period of periods;">
+        <ion-card>
+          <ion-card-header>
+            <h3>Period: {{ period.period }}</h3>
+          </ion-card-header>
+          
+            <ion-list>
+              <ion-item *ngFor="let student of studentsByPeriod[period.period]">
+                <p>{{student.last }}, {{ student.first }}</p>
+              </ion-item>
+            </ion-list>
+          
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
+</ion-content>

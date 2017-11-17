@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      gymClassHero
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- <button ion-button color="primary" (click)="goToStudents()">Students</button>
+  <button ion-button color="danger" (click)="goToNewRun()">New Run</button> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-6 class="homeCol roster" (click)="goToStudents()">
+        Students
+      </ion-col>
+      <ion-col col-12 col-md-6 class="homeCol run" (click)="goToNewRun()">
+        Run          
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

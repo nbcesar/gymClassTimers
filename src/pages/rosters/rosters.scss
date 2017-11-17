@@ -1,0 +1,17 @@
+page-rosters {
+    .scroll-content {
+        background-color: #f8f8f8;
+    }
+    .class-col {
+        display: flex;
+        min-width: 300px;
+        max-width: 300px;
+    }
+    .buttonCol {
+        display: flex;
+        justify-content: center;
+    }
+    .input {
+        background-color: #ffffff;
+    }
+}

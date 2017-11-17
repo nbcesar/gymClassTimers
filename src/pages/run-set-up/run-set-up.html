@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title (click)="goHome()">Gym Class Heroes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-toolbar >
+    <ion-row>
+      <ion-col col-4 align-self-center>
+        <p text-center>{{ selectedStudents.length }} Students</p>
+      </ion-col>
+      <ion-col col-4 align-self-center class="lapsCol">
+        <ion-label>Laps</ion-label>
+        <ion-input type="number" placeholder="Laps" [(ngModel)]="numLaps"></ion-input>
+      </ion-col>
+      <ion-col col-4 text-center>
+        <button ion-button (click)="getSet()" [disabled]="selectedStudents.length == 0 || numLaps < 1">Get Set</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+  <hr>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-5 col-lg-3 *ngFor="let period of periods;">
+        <ion-card>
+          <ion-card-header>
+              <h4 text-center>Period: {{ period.period }}</h4>
+          </ion-card-header>
+          <ion-list>
+            <!-- <ion-list-header>
+              <ion-label>All Students</ion-label>
+              <ion-checkbox checked="false"></ion-checkbox>
+            </ion-list-header> -->
+            <ion-item *ngFor="let student of students[period.period]">
+              <ion-label>{{ student.first }} {{ student.last[0] }}</ion-label>
+              <ion-checkbox checked="false" (ionChange)="updateSelectedStudent($event, student)" ></ion-checkbox>
+            </ion-item> 
+          </ion-list>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
